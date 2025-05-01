@@ -28,7 +28,7 @@ def speed_test():
     root = tkinter.Tk()
     root.configure()
     root.geometry('900x200')
-    root.title = 'Speed Typing Test'
+    root.title('Speed Typing Test')
 
     label_1 = tkinter.Label(root, text=sentence, font='times 20', bg='black',
                             fg='white')
