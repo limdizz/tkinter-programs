@@ -15,11 +15,16 @@ button_list = [
     'Exit'
 ]
 
+
+def make_cmd(key):
+    def command(): calc(key)
+    return command
+
+
 rows = 1
 columns = 0
 for i in button_list:
-    rel = ""
-    cmd = lambda x=i: calc(x)
+    cmd = make_cmd(i)
     ttk.Button(root, text=i, command=cmd, width=10).grid(row=rows, column=columns)
     columns += 1
     if columns > 4:
@@ -35,7 +40,7 @@ def calc(key):
         try:
             result = eval(calc_entry.get())
             calc_entry.insert(END, '=' + str(result))
-        except:
+        except IndexError:
             messagebox.showerror('Error!', 'Check the correctness of data.')
 
     for n in '1234567890':
