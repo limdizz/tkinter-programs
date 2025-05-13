@@ -1,19 +1,25 @@
-from tkinter import *
-from tkinter import messagebox
-from tkinter import ttk
 import math
 import sys
+from tkinter import *
+from tkinter import messagebox
 
 root = Tk()
 root.title('Calculator')
+
+all_buttons = []
+all_labels = []
 
 button_list = [
     '1', '2', '3', '+', '-',
     '4', '5', '6', '*', '/',
     '7', '8', '9', '√', 'xⁿ',
     '.', '0', '=', 'π', 'C',
-    'Exit'
+    'Exit', 'BLACK', 'WHITE'
 ]
+
+calc_entry = Entry(root, width=75)
+calc_entry.grid(row=0, column=0, columnspan=5)
+all_labels.append(calc_entry)
 
 
 def make_cmd(key):
@@ -25,11 +31,21 @@ rows = 1
 columns = 0
 for i in button_list:
     cmd = make_cmd(i)
-    ttk.Button(root, text=i, command=cmd, width=10).grid(row=rows, column=columns)
+    btn = Button(text=i, bg='#FFF', command=cmd, width=12, font='Times 12')
+    btn.grid(row=rows, column=columns)
+    all_buttons.append(btn)
     columns += 1
     if columns > 4:
         columns = 0
         rows += 1
+
+
+def change_theme(bg_color, fg_color):
+    root.configure(bg=bg_color)
+    for btn in all_buttons:
+        btn.config(bg=bg_color, fg=fg_color)
+    for label in all_labels:
+        label.config(bg=bg_color, fg=fg_color)
 
 
 def calc(key):
@@ -71,12 +87,14 @@ def calc(key):
     elif key == 'π':
         calc_entry.insert(END, str(math.pi))
 
+    elif key == 'BLACK':
+        change_theme('black', 'white')
+    elif key == 'WHITE':
+        change_theme('white', 'black')
+
     elif key == 'Exit':
         root.after(1, root.destroy)
         sys.exit()
 
-
-calc_entry = Entry(root, width=75)
-calc_entry.grid(row=0, column=0, columnspan=5)
 
 root.mainloop()
