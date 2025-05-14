@@ -9,12 +9,22 @@ root.title('Calculator')
 all_buttons = []
 all_labels = []
 
-button_list = [
-    '1', '2', '3', '+', '-',
-    '4', '5', '6', '*', '/',
-    '7', '8', '9', '√', 'xⁿ',
-    '.', '0', '=', 'π', 'C',
-    'Exit', 'BLACK', 'WHITE'
+button_list_numbers = [
+    '1', '2', '3',
+    '4', '5', '6',
+    '7', '8', '9',
+    '.', '0', '=',
+    'π', 'e', 'n!',
+    'EXIT', 'BLACK', 'WHITE'
+]
+
+button_list_ops = [
+    'C', '⌫', '±',
+    '(', ')',
+    '*', '+',
+    '-', '/', '√',
+    'sin', 'cos', 'xⁿ',
+    'tg', 'ctg', '1/x', 'log₂', 'lg'
 ]
 
 calc_entry = Entry(root, width=75)
@@ -29,14 +39,26 @@ def make_cmd(key):
 
 rows = 1
 columns = 0
-for i in button_list:
+for i in button_list_numbers:
     cmd = make_cmd(i)
     btn = Button(text=i, bg='#FFF', command=cmd, width=12, font='Times 12')
     btn.grid(row=rows, column=columns)
     all_buttons.append(btn)
     columns += 1
-    if columns > 4:
+    if columns > 2:
         columns = 0
+        rows += 1
+
+rows = 1
+columns = 3
+for i in button_list_ops:
+    cmd = make_cmd(i)
+    btn = Button(text=i, bg='#FFF', command=cmd, width=12, font='Rockwell 12')
+    btn.grid(row=rows, column=columns)
+    all_buttons.append(btn)
+    columns += 1
+    if columns > 5:
+        columns = 3
         rows += 1
 
 
