@@ -87,6 +87,11 @@ def calc(key):
 
     if key == 'C':
         calc_entry.delete(0, END)
+    elif key == '⌫':
+        current_text = calc_entry.get()
+        if current_text:
+            calc_entry.delete(len(current_text) - 1)
+
     elif key == '+':
         calc_entry.insert(END, '+')
     elif key == '-':
@@ -95,6 +100,18 @@ def calc(key):
         calc_entry.insert(END, '*')
     elif key == '/':
         calc_entry.insert(END, '/')
+
+    elif key == '±':
+        if '=' in calc_entry.get():
+            calc_entry.delete(0, END)
+        try:
+            if calc_entry.get()[0] == '-':
+                calc_entry.delete(0)
+            else:
+                calc_entry.insert(0, '-')
+        except IndexError:
+            pass
+
     elif key == '(':
         calc_entry.insert(END, '(')
     elif key == ')':
@@ -106,15 +123,35 @@ def calc(key):
         calc_entry.insert(END, '=' + str(math.sqrt(int(calc_entry.get()))))
     elif key == 'xⁿ':
         calc_entry.insert(END, '**')
+    elif key == 'log₂':
+        calc_entry.insert(END, '=' + str(math.log2(int(calc_entry.get()))))
+    elif key == 'lg':
+        calc_entry.insert(END, '=' + str(math.log10(int(calc_entry.get()))))
+    elif key == '1/x':
+        calc_entry.insert(END, '=' + str(1 / int(calc_entry.get())))
+    elif key == 'n!':
+        calc_entry.insert(END, '=' + str(math.factorial(int(calc_entry.get()))))
+
     elif key == 'π':
         calc_entry.insert(END, str(math.pi))
+    elif key == 'e':
+        calc_entry.insert(END, str(math.e))
+
+    elif key == 'sin':
+        calc_entry.insert(END, '=' + str(math.sin(int(calc_entry.get()))))
+    elif key == 'cos':
+        calc_entry.insert(END, '=' + str(math.cos(int(calc_entry.get()))))
+    elif key == 'tg':
+        calc_entry.insert(END, '=' + str(math.tan(int(calc_entry.get()))))
+    elif key == 'ctg':
+        calc_entry.insert(END, '=' + str(1 / math.tan(int(calc_entry.get()))))
 
     elif key == 'BLACK':
         change_theme('black', 'white')
     elif key == 'WHITE':
         change_theme('white', 'black')
 
-    elif key == 'Exit':
+    elif key == 'EXIT':
         root.after(1, root.destroy)
         sys.exit()
 
