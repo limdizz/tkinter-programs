@@ -1,6 +1,51 @@
+import random
 import tkinter
 from timeit import default_timer as timer
-import random
+
+root = tkinter.Tk()
+root.resizable(False, False)
+root.geometry('900x200')
+root.title('Speed Typing Test')
+
+sentence_label = tkinter.Label(root,
+                               font='times 15',
+                               )
+sentence_label.place(x=300, y=10)
+
+start_typing_label = tkinter.Label(root,
+                                   text='Start Typing:',
+                                   font='times 12'
+                                   )
+start_typing_label.place(x=160, y=65)
+
+entry = tkinter.Entry(root,
+                      width=50,
+                      bg='black',
+                      fg='white',
+                      font='times 12'
+                      )
+entry.place(x=280, y=65)
+
+done_button = tkinter.Button(root,
+                             text='Done',
+                             width=12,
+                             bg='black',
+                             fg='white'
+                             )
+done_button.place(x=280, y=120)
+
+try_again_button = tkinter.Button(root,
+                                  text='Try Again',
+                                  width=12,
+                                  bg='black',
+                                  fg='white'
+                                  )
+try_again_button.place(x=590, y=120)
+
+check_result_label = tkinter.Label(root,
+                                   font='times 20'
+                                   )
+check_result_label.place(x=160, y=120)
 
 
 def speed_test():
@@ -25,44 +70,28 @@ def speed_test():
 
     sentence = random.choice(speed_test_sentences)
     start = timer()
-    root = tkinter.Tk()
-    root.configure()
-    root.geometry('900x200')
-    root.title('Speed Typing Test')
 
-    label_1 = tkinter.Label(root, text=sentence, font='times 20', bg='black',
-                            fg='white')
-    label_1.place(x=180, y=10)
-
-    label_2 = tkinter.Label(root, text='Start Typing:', font='times 10',
-                            bg='black', fg='white')
-    label_2.place(x=160, y=65)
-
-    entry = tkinter.Entry(root, width=50, bg='black', fg='white', font='times 12')
-    entry.place(x=280, y=65)
+    sentence_label.config(text=sentence)
+    entry.delete(0, tkinter.END)
+    check_result_label.config(text='')
 
     def check_result():
         if entry.get() == sentence:
             end = timer()
-            label_3.configure(text=f'Time: {round((end - start), 4)}s')
+            check_result_label.configure(text=f'Time: {round((end - start), 4)}s',
+                                         font='times 12',
+                                         fg='black'
+                                         )
         else:
-            label_3.configure(text='Wrong Input')
+            check_result_label.configure(text='Wrong Input',
+                                         font='times 12',
+                                         fg='red'
+                                         )
 
-    button_1 = tkinter.Button(root, text='Done',
-                              command=check_result, width=12, bg='black',
-                              fg='white')
-    button_1.place(x=300, y=120)
-
-    button_2 = tkinter.Button(root, text='Try Again',
-                              command=speed_test, width=12, bg='black',
-                              fg='white')
-    button_2.place(x=470, y=120)
-
-    label_3 = tkinter.Label(root, text='', font='times 20')
-    label_3.place(x=100, y=100)
-
-    root.mainloop()
+    done_button.config(command=check_result)
+    try_again_button.config(command=speed_test)
 
 
 if __name__ == '__main__':
     speed_test()
+    root.mainloop()
