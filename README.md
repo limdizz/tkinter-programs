@@ -54,28 +54,39 @@
   <li>сложение;</li>
   <li>вычитание;</li>
   <li>возведение в степень;</li>
-  <li>взятие арифметического корня.</li>
+  <li>взятие арифметического корня;</li>
+  <li>вычисление логарифма;</li>
+  <li>вычисление десятичного логарифма;</li>
+  <li>нахождение факториала от числа;</li>
+  <li>поиск взаимно обратного числа;</li>
+  <li>вычисление тригонометрических функций от числа: синуса, косинуса, тангенса, котангенса.</li>
 </ul>
-<p>Также доступен вывод числа π, кнопка очистки экрана C и кнопка выхода.</p>
+<p>Также доступен вывод чисел π и e, кнопка очистки экрана C, кнопка удаления одного символа, кнопки смены темы (тёмной и светлой соответственно) и кнопка выхода.</p>
 
-![2025-05-01_21-04-36](https://github.com/user-attachments/assets/0a7addf1-3673-4cb4-b5c2-a091a4a95715)
+![eE98uDqq3Rc2EdnFDnNMICarCb5wqYZ0q_YbtQgU4IoSySqD9d92nW0C4uVLuLqT7VKS1MIaongOD6nO7i2RBas8](https://github.com/user-attachments/assets/7bdf0ea5-7e58-435b-81bd-0c742b1df541)
 
 <p>A calculator that supports common mathematical operations:</p>
 <ul>
   <li>multiplication;</li>
-<li>division;</li>
-<li>addition;</li>
-<li>subtraction;</li>
-<li>exponentiation;</li>
-<li>extraction of the root.</li>
+  <li>division;</li>
+  <li>addition;</li>
+  <li>subtraction;</li>
+  <li>exponentiation;</li>
+  <li>extraction of the root;</li>
+  <li>calculating the logarithm;</li>
+  <li>calculating the decimal logarithm;</li>
+  <li>factorial;</li>
+  <li>searching for the reciprocal of a number;</li>
+  <li>calculating trigonometric functions: sin, cos, tg, ctg.</li>
 </ul>
-<p>The output of the number π, the clear screen button C and the exit button are also available.</p>
+<p>The output of the numbers π and e, the clear screen button C, the delete one symbol button, the change theme (light/dark) buttons and the exit button are also available.</p>
 
 <h2>Speed Typing Test</h2>
 <p>Требуется печатать на клавиатуре некоторую случайную фразу как можно быстрее. В качестве фраз я взял строчки из любимых метал-песен.</p>
 <p>В случае успешного ввода и нажатия кнопки Done выводится время, за которое фраза введена, иначе выводится сообщение о неправильном вводе. Можно нажать кнопку Try Again, чтобы ввести новую фразу.</p>
 
-![2025-05-01_21-00-34](https://github.com/user-attachments/assets/78353aa0-6e1a-4d09-b385-13ea050583f3)
+![2025-07-03_00-21-12](https://github.com/user-attachments/assets/b2af8fbb-07b8-4965-8309-a406d376144d)
+
 
 <p>You need to type some random phrase on the keyboard as quick as possible. I used lines from my favorite metal songs as phrases.
 
@@ -84,6 +95,6 @@ If the input is successful and the Done button is pressed, the time for which th
 <h2>Temp Converter</h2>
 <p>Конвертер температуры, переводящий из градусов по Цельсию в градусы по Фаренгейту и наоборот.</p>
 
-![2025-05-01_21-01-53](https://github.com/user-attachments/assets/54756245-f1ee-43cd-b9c9-979c8c66b116)
+![otDRE1JtEE2KqjcDMdEbA3xg_ZXImFAoam41XY76jfyhHVsq1uBXxzp_W7vEj-sluP0Vr3MTLc18fLq1NV_EvyUp](https://github.com/user-attachments/assets/f72a5dc3-ad11-4248-8277-1a62ae2be787)
 
 <p>A temperature converter that converts from degrees Celsius to degrees Fahrenheit and back.</p>
