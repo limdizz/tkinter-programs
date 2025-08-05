@@ -2,8 +2,8 @@ from tkinter import *
 from tkinter import messagebox
 
 root = Tk()
-root.title('Body mass index (BMI) calculator')
-root.geometry('640x480')
+root.title('Body Mass Index (BMI) Calculator')
+root.geometry('640x220')
 
 
 def calculate_bmi():
@@ -47,6 +47,9 @@ height_lbl = Label(
     frame,
     text='Enter your height (m): ',
     font='Times 20',
+    width=20,
+    bg='black',
+    fg='white'
 )
 height_lbl.grid(row=3, column=1, pady=10)
 
@@ -54,6 +57,9 @@ weight_lbl = Label(
     frame,
     text='Enter your weight (kg): ',
     font='Times 20',
+    width=20,
+    bg='black',
+    fg='white'
 )
 weight_lbl.grid(row=4, column=1, pady=10)
 
