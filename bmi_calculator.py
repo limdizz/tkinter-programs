@@ -3,11 +3,11 @@ from tkinter import messagebox
 
 root = Tk()
 root.title('Body Mass Index (BMI) Calculator')
-root.geometry('640x220')
+root.geometry('460x200')
 
 
 def calculate_bmi():
-    kg = int(weight_form.get())
+    kg = float(weight_form.get())
     m = float(height_form.get())
     bmi = round((kg / (m**2)), 1)
 
@@ -65,13 +65,15 @@ weight_lbl.grid(row=4, column=1, pady=10)
 
 height_form = Entry(
     frame,
-    font='Times 20'
+    font='Times 20',
+    width=9,
 )
 height_form.grid(row=3, column=2)
 
 weight_form = Entry(
     frame,
     font='Times 20',
+    width=9,
 )
 weight_form.grid(row=4, column=2, pady=5, padx=5)
 
