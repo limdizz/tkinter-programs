@@ -29,7 +29,7 @@
   <li>если индекс массы тела больше 40 - ожирение 3 степени (BMI > 40).</li>
 </ul>
 
-![2025-05-01_21-03-12](https://github.com/user-attachments/assets/78f27c05-56a8-4f28-bdde-465be7b331b1)
+<img width="573" height="386" alt="image" src="https://github.com/user-attachments/assets/3acf1d1b-5e08-4f8c-917b-196abc8ef0ba" />
 
 <p>All you have to do in this program is to enter height in meters (1.75, for example) and the weight in kilograms. Using the entered values, this calculator calculates the body mass index using the following formula:</p>
 <p>Weight (kg) / height^2 (m)</p>
