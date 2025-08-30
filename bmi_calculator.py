@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 root = Tk()
 root.title('Body Mass Index (BMI) Calculator')
-root.geometry('460x190')
+root.geometry('460x185')
 
 
 def calculate_bmi():
